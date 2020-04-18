@@ -1,0 +1,22 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__)
+    ->exclude('var')
+;
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setUsingCache(false)
+    ->setRules([
+        '@PSR2' => true,
+        '@Symfony' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'blank_line_after_opening_tag' => false,
+        // add declare strict type to every file
+        'declare_strict_types' => true,
+        // comparisons should always be strict
+        'strict_comparison' => true,
+    ])
+    ->setFinder($finder)
+;
