@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Tracker\TorrentRepository")
+ * @ORM\Table(name="tracker_torrent")
  */
 class Torrent
 {
@@ -22,7 +23,7 @@ class Torrent
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private string $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="integer")

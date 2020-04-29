@@ -34,9 +34,10 @@ class Invite
      */
     private User $invitee;
 
-    public function __construct()
+    public function __construct(string $token)
     {
         $this->id = Uuid::uuid4();
+        $this->token = $token;
     }
 
     public function getId(): UuidInterface
@@ -44,19 +45,19 @@ class Invite
         return $this->id;
     }
 
-    public function getInviter(): ?User
+    public function getInviter(): User
     {
         return $this->inviter;
     }
 
-    public function setInviter(?User $inviter): self
+    public function setInviter(User $inviter): self
     {
         $this->inviter = $inviter;
 
         return $this;
     }
 
-    public function getToken(): ?string
+    public function getToken(): string
     {
         return $this->token;
     }
@@ -68,7 +69,7 @@ class Invite
         return $this;
     }
 
-    public function getInvitee(): ?User
+    public function getInvitee(): User
     {
         return $this->invitee;
     }
